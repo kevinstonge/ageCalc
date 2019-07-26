@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View } from 'react-native';
-import DatePicker from 'react-native-datepicker'
+import DatePicker from './datepicker.js'
 
 export default class PickDate extends Component {
     render() {

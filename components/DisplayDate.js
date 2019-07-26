@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {View, Text, } from 'react-native';
 import styles from '../styles';
+import Moment from 'moment';
 
 export default class DisplayDate extends Component {
     generateDisplayObject = () => {
@@ -30,7 +31,7 @@ export default class DisplayDate extends Component {
         let displayObject = this.generateDisplayObject();
         return (
             <View style={styles.dateBox}>
-                <Text style={styles.dateHeading}>On {new Date(this.props.displayDate).toString()} you {this.props.tense}:</Text>
+                <Text style={styles.dateHeading}>On {Moment(this.props.displayDate).format("ddd, MMM D, YYYY [at] HH:mm")} you {this.props.tense}:</Text>
                 {displayObject.map(e=>
                     <Text key={e.label} style={e.style}>{e.displayValue} {e.label} old</Text>)
                 }

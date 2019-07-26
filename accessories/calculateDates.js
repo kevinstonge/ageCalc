@@ -1,5 +1,8 @@
-export default function calculateDates(date,numbers,rarity,maxDateWindow,multiples) {
-    date = new Date(date).getTime();
+//update this to use Moment.js?
+//update this to apply rarity to the mode-dependent range
+export default function calculateDates(dateData) {
+    let { birthDate,numbers,rarity,maxDateWindow,multiples } = dateData;
+    birthDate = new Date(birthDate).getTime();
     let dates = [];
     numbers.forEach(n => {
         Object.keys(multiples).forEach(k => {
@@ -7,7 +10,7 @@ export default function calculateDates(date,numbers,rarity,maxDateWindow,multipl
             let nMultiples = maxDateWindow/n/m;
             if (nMultiples < rarity) {
                 for (let i = 1; i < nMultiples; i++) {
-                    dates.push((n*i*m)+date)
+                    dates.push((n*i*m)+birthDate)
                 }
             }
         });

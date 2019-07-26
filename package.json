@@ -8,10 +8,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.5.1",
+    "@react-native-community/async-storage": "^1.6.1",
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "react-native-datepicker": "^1.7.2"
+    "react-native-datepicker": "^1.7.2",
+    "react-native-modal": "^11.2.0",
+    "moment": "^2.22.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
